@@ -1,0 +1,83 @@
+@aker-green: #498744;
+@aker-green-dark: #6da936;
+@aker-green-light: #aeca47;
+
+@aker-grey-light: #c7ccc2;
+@aker-almost-black: #30332e;
+
+body {
+  font-family: Usual, Helvetica;
+  background-color: @aker-green;
+  font-size: 14px;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  font-size: 13px;
+}
+
+.inverted {
+  color: #fff;
+
+  a {
+    color: #fff;
+  }
+}
+
+.dark {
+  color: @aker-grey-light;
+  background-color: @aker-almost-black;
+
+  a {
+    color: @aker-green-dark;
+  }
+}
+
+.p1 { padding: 8px; }
+.p2 { padding: 16px; }
+.p3 { padding: 24px; }
+.p4 { padding: 32px; }
+
+.centered {
+  text-align: center;
+}
+
+.templateColumns {
+  margin: auto;
+  max-width: 600px;
+}
+
+.templateRowContainer {
+  border-top: 7px solid @aker-green-light;
+  background-color: #fff;
+}
+
+@media only screen and (max-width:  480px) {
+  .templateColumns {
+    width: 100% !important;
+  }
+
+  .templateColumnContainer {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .columnImage {
+    height: auto !important;
+    max-width: 480px !important;
+    width: 100% !important;
+  }
+
+  .leftColumnContent {
+    font-size: 16px !important;
+    line-height: 125% !important;
+  }
+
+  .rightColumnContent {
+    font-size: 16px !important;
+    line-height: 125% !important;
+  }
+}
