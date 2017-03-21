@@ -5,18 +5,16 @@ html
     link(rel='stylesheet' href='styles.css')
   body
 
-    <@import "images/sprites.svg">
-
     .templateColumns.inverted
       table(border=0 cellpadding=0 cellspacing=0 width='100%')
         tr
-          td.p4.centered If you are having problems viewing this email, please #[a(href='#') click here].
+          td.padded.centered If you are having problems viewing this email, please #[a(href='#') click here].
 
     .templateColumns
       .templateRowContainer
         table(border=0 cellpadding=0 cellspacing=0 width='100%')
           tr
-            td.p4.centered <@svg ["aker-logo", { "width": 180, "height": 50 }]>
+            td.padded.centered <@image "images/aker-logo.png">
 
         table.templateColumns(border=0 cellpadding=0 cellspacing=0 width=600)
           tr
@@ -26,7 +24,7 @@ html
                   td.leftColumnContent
                     img.columnImage(src='http://placekitten.com/g/480/300' width=280 style='max-width:280px;')
                 tr
-                  td.leftColumnContent.p1(valign='top')
+                  td.leftColumnContent(valign='top')
                     h1 Left Column
                     |  Lorem ipsum dolor sit amet.
             td.templateColumnContainer(align='center' valign='top' width='50%')
@@ -35,7 +33,7 @@ html
                   td.rightColumnContent
                     img.columnImage(src='http://placekitten.com/g/480/300' width=280 style='max-width:280px;')
                 tr
-                  td.rightColumnContent.p1(valign='top')
+                  td.rightColumnContent(valign='top')
                     h1 Right Column
                     |  Lorem ipsum dolor sit amet.
 
@@ -44,12 +42,12 @@ html
           td.templateColumnContainer(align='center' valign='top' width='70%')
             table(border=0 cellpadding=0 cellspacing=0 width='100%')
               tr
-                td.leftColumnContent.p4
+                td.leftColumnContent.padded
 
-                  <@svg ["icon-instagram", { "width": 20, "height": 20 }]>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <@svg ["icon-twitter", { "width": 20, "height": 20 }]>&nbsp;&nbsp;
-                  <@svg ["icon-facebook", { "width": 20, "height": 20 }]>&nbsp;&nbsp;
-                  <@svg ["icon-email", { "width": 20, "height": 20 }]>
+                  <@image "images/icon-instagram.png">&nbsp;&nbsp;&nbsp;
+                  <@image "images/icon-twitter.png">&nbsp;&nbsp;&nbsp;
+                  <@image "images/icon-facebook.png">&nbsp;&nbsp;&nbsp;
+                  <@image "images/icon-email.png">
 
                   p Come chat with us on our #[a(href='#') Community Forum].
                   p To manage email notifications, #[a(href='#') click here].
@@ -57,5 +55,5 @@ html
           td.templateColumnContainer(align='center' valign='top' width='30%')
             table(border=0 cellpadding=0 cellspacing=0 width='100%')
               tr
-                td.rightColumnContent.centered
-                  <@svg ["aker-logo-square", { "width": 120 }]>
+                td.rightColumnContent.centered.padded
+                  <@image "images/aker-kits.png">
