@@ -10,13 +10,12 @@ html
     .templateColumns
       .templateRowContainer
         include _partials/logotype
+        include _partials/hero
+
+        include _partials/section
+        include _partials/grid
 
         .push
-          h4 EMAIL Templates
-          ul
-            li: a(href='digest.html') Digest
-            li: a(href='cart.html') Abandoned cart
-            li: a(href='source.html') Source file
-            li: a(href='kit.html') Purchased kit
+          a.btn(href='#') Purchase now!
 
         include _partials/footer
