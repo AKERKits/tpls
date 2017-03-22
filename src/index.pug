@@ -5,60 +5,76 @@ html
     base(href='/')
     link(rel='stylesheet' href='styles.css')
   body
-
     .templateColumns.inverted
       table(border=0 cellpadding=0 cellspacing=0 width='100%')
-        tr
-          td.padded.centered If you are having problems viewing this email, please #[a(href='#') click here].
+        tr: td
+          .push.centered If you are having problems viewing this email, please #[a(href='#') click here].
 
     .templateColumns
       .templateRowContainer
         table(border=0 cellpadding=0 cellspacing=0 width='100%')
-          tr
-            td.padded.centered
+          tr: td
+            .push.centered
               img(src='images/logotype-color.png' width=180 height=50)
+          tr: td.back(style='background-image:url(//placehold.it/620x260)')
+            h2 New Kit Available!
 
-        table.templateColumns(border=0 cellpadding=0 cellspacing=0 width=600)
+        table(border=0 cellpadding=0 cellspacing=0 width='100%')
+          tr: td
+            .push
+              h3 Welcome |USERNAME| to the AKER family!
+              p.text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.
+
+        .push
+          table.templateColumns(border=0 cellpadding=0 cellspacing=0)
+            tr
+              td.templateColumnContainer(align='center' valign='top' width='50%')
+                table(border=0 cellpadding=0 cellspacing=0 width='100%')
+                  tr: td.columnContent
+                    img.fit(src='http://placekitten.com/g/300/300' width=300)
+
+              td.templateColumnContainer(align='center' valign='top' width='50%')
+                table(border=0 cellpadding=0 cellspacing=0 width='100%')
+                  tr: td.columnContent.banner
+                    h4 Easy to assemble!
+
+          table.templateColumns(border=0 cellpadding=0 cellspacing=0)
+            tr: td.back.cover(style='background-image:url(//placehold.it/620x260)') &nbsp;
+
+          table.templateColumns(border=0 cellpadding=0 cellspacing=0)
+            tr
+              td.templateColumnContainer(align='center' valign='top' width='50%')
+                table(border=0 cellpadding=0 cellspacing=0 width='100%')
+                  tr: td.columnContent.banner
+                    h4 Perfect for long rooted plants!
+
+              td.templateColumnContainer(align='center' valign='top' width='50%')
+                table(border=0 cellpadding=0 cellspacing=0 width='100%')
+                  tr: td.columnContent
+                    img.fit(src='http://placekitten.com/g/300/300' width=300)
+
+        .push
+          .btn Purchase now!
+
+        table.templateColumns.inverted.dark(border=0 cellpadding=0 cellspacing=0)
           tr
-            td.templateColumnContainer(align='center' valign='top' width='50%')
-              table(border=0 cellpadding=10 cellspacing=0 width='100%')
-                tr
-                  td.leftColumnContent
-                    img.columnImage(src='http://placekitten.com/g/480/300' width=280 style='max-width:280px;')
-                tr
-                  td.leftColumnContent(valign='top')
-                    h1 Left Column
-                    |  Lorem ipsum dolor sit amet.
-            td.templateColumnContainer(align='center' valign='top' width='50%')
-              table(border=0 cellpadding=10 cellspacing=0 width='100%')
-                tr
-                  td.rightColumnContent
-                    img.columnImage(src='http://placekitten.com/g/480/300' width=280 style='max-width:280px;')
-                tr
-                  td.rightColumnContent(valign='top')
-                    h1 Right Column
-                    |  Lorem ipsum dolor sit amet.
+            td.templateColumnContainer(align='center' valign='top' width='70%')
+              table(border=0 cellpadding=0 cellspacing=0 width='100%')
+                tr: td.columnContent
+                  .push
+                    img(src='images/icon-instagram.png' width=20 height=20)
+                    |&nbsp;&nbsp;&nbsp;
+                    img(src='images/icon-twitter.png' width=19 height=16)
+                    |&nbsp;&nbsp;&nbsp;
+                    img(src='images/icon-facebook.png' width=9 height=18)
+                    |&nbsp;&nbsp;&nbsp;
+                    img(src='images/icon-email.png' width=20 height=14)
 
-      table.templateColumns.inverted.dark(border=0 cellpadding=0 cellspacing=0 width=600)
-        tr
-          td.templateColumnContainer(align='center' valign='top' width='70%')
-            table(border=0 cellpadding=0 cellspacing=0 width='100%')
-              tr
-                td.leftColumnContent.padded
+                    p Come chat with us on our #[a(href='#') Community Forum].
+                    p To manage email notifications, #[a(href='#') click here].
 
-                  img(src='images/icon-instagram.png' width=20 height=20)
-                  |&nbsp;&nbsp;&nbsp;
-                  img(src='images/icon-twitter.png' width=19 height=16)
-                  |&nbsp;&nbsp;&nbsp;
-                  img(src='images/icon-facebook.png' width=9 height=18)
-                  |&nbsp;&nbsp;&nbsp;
-                  img(src='images/icon-email.png' width=20 height=14)
-
-                  p Come chat with us on our #[a(href='#') Community Forum].
-                  p To manage email notifications, #[a(href='#') click here].
-
-          td.templateColumnContainer(align='center' valign='top' width='30%')
-            table(border=0 cellpadding=0 cellspacing=0 width='100%')
-              tr
-                td.rightColumnContent.centered.padded
-                  img(src='images/aker-kits.png' width=121 height=86)
+            td.templateColumnContainer(align='center' valign='top' width='30%')
+              table(border=0 cellpadding=0 cellspacing=0 width='100%')
+                tr: td.columnContent
+                  .push.centered
+                    img(src='images/aker-kits.png' width=121 height=86)
