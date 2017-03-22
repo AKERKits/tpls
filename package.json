@@ -13,7 +13,6 @@
     "dist:stage": "tarima -fqe stage"
   },
   "tarima": {
-    "src": "src/**/*",
     "filter": [
       "!_*",
       "!**/_*",
@@ -33,7 +32,8 @@
       "tarima-lr"
     ],
     "plugins": [
-      "talavera"
+      "talavera",
+      "tarima-juice"
     ],
     "pluginOptions": {
       "talavera": {
@@ -62,8 +62,9 @@
     "less-plugin-autoprefix": "^1.5.1",
     "pug": "^2.0.0-beta11",
     "rollup": "^0.41.6",
-    "talavera": "^0.2.0",
-    "tarima-cli": "^0.3.10"
+    "talavera": "^0.2.1",
+    "tarima-cli": "^0.3.11",
+    "tarima-juice": "^0.1.2"
   },
   "optionalDependencies": {
     "chokidar": "^1.6.1",
