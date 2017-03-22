@@ -5,8 +5,14 @@
 @aker-green-light: #aeca47;
 @aker-green-background: #7eb445;
 
+@aker-grey: #959991;
 @aker-grey-light: #c7ccc2;
 @aker-almost-black: #30332e;
+
+@aker-spot-color: #fafcfd;
+@aker-spot-border: #d5d7d9;
+@aker-spot-green: #3ab54a;
+@aker-spot-blue: #25aae2;
 
 *,
 *:after,
@@ -26,11 +32,11 @@ table {
 }
 
 a {
-  color: @aker-green;
+  color: @aker-green-light;
   text-decoration: none;
 
   &:hover {
-    color: @aker-green-light;
+    color: @aker-green;
     text-decoration: underline;
   }
 }
@@ -69,6 +75,17 @@ h4 {
   text-transform: uppercase;
   background-color: @aker-green-background;
   box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: @aker-green-light;
+  }
+
+  &:active {
+    background-color: @aker-almost-black;
+    box-shadow: inset 0 2px 0 0 rgba(0, 0, 0, 0.15);
+  }
 }
 
 .fit {
@@ -77,6 +94,21 @@ h4 {
 
 .text {
   line-height: 28px;
+}
+
+.spot {
+  padding: 30px;
+  border-radius: 5px;
+  background-color: @aker-spot-color;
+  border: 1px solid @aker-spot-border;
+
+  &.green {
+    border-left: 5px solid @aker-spot-green;
+  }
+
+  &.blue {
+    border-left: 5px solid @aker-spot-blue;
+  }
 }
 
 .back {
@@ -107,6 +139,41 @@ h4 {
     right: 0;
     bottom: 0;
   }
+}
+
+.items {
+  border: 0;
+
+  td {
+    border: 0;
+    border-bottom: 1px solid #dae6cf;
+  }
+
+  p {
+    font-size: 13px;
+    color: @aker-grey;
+  }
+
+  h4 {
+    font-weight: normal;
+  }
+
+  img {
+    margin: 20px;
+  }
+
+  span {
+    font-weight: bold;
+    color: @aker-green-background;
+  }
+}
+
+.grey {
+  color: @aker-grey;
+}
+
+.right {
+  float: right;
 }
 
 .banner {

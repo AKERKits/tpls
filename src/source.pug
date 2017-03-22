@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title AKER Kits
+    base(href='/')
+    link(rel='stylesheet' href='styles.css')
+  body
+    include _partials/header
+
+    .templateColumns
+      .templateRowContainer
+        include _partials/logotype
+
+        .push.centered
+          img(src='images/icon-cnc.png' width=112 height=142)
+
+        .push.centered
+          h3 Time to make some kits!
+
+        .push
+          p.text.
+            Now that you’ve downloaded the source files files,
+            you can go ahead and start building!
+
+            Our kits are always in constant improvement,
+            so don’t forget to visit our #[a(href='#') Community Forum]
+            where you can provide your feedback and get support.
+
+        .push.green.spot
+          .right
+            a.btn(href='#') Visit
+
+          h4 AKER Kits Design
+          small 87 topics
+
+        include _partials/footer

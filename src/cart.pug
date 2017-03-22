@@ -1,0 +1,51 @@
+doctype html
+html
+  head
+    title AKER Kits
+    base(href='/')
+    link(rel='stylesheet' href='styles.css')
+  body
+    include _partials/header
+
+    .templateColumns
+      .templateRowContainer
+        include _partials/logotype
+
+        .push.centered
+          img(src='images/icon-cart.png' width=160 height=140)
+
+        .push.centered
+          h3 Thank you for your purchase!
+
+        .push
+          p.text.
+            #[b |NAME_HERE|]. We noticed that you recently visited our store and
+            we wouldn’t want you to miss on the awesome kits left in your cart.
+
+            Complete your order of the following products and let us bring urban farming to you!
+
+        .push
+          table.items(border=1 cellpadding=0 cellspacing=0 width='100%')
+            tr
+              td: img(src='//placehold.it/100' width=100)
+              td(width='100%')
+                h4 3 Tier Planter
+                p Finish: Walnut &nbsp;&nbsp;&middot;&nbsp;&nbsp; #[span $125.00]
+            tr
+              td: img(src='//placehold.it/100' width=100)
+              td(width='100%')
+                h4 3 Tier Planter
+                p Finish: Walnut &nbsp;&nbsp;&middot;&nbsp;&nbsp; #[span $125.00]
+            tr
+              td: img(src='//placehold.it/100' width=100)
+              td(width='100%')
+                h4 3 Tier Planter
+                p Finish: Walnut &nbsp;&nbsp;&middot;&nbsp;&nbsp; #[span $125.00]
+
+        .push
+          a.btn(href='#') Complete your order!
+
+        .push.centered
+          small.grey If you experience any problems placing your order then please contact us at #[b 720-441-2970].
+
+        include _partials/footer
