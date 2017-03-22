@@ -10,8 +10,7 @@
     "dist": "tarima -fq",
     "dist:ci": "tarima -fqe ci",
     "dist:prod": "tarima -fqe prod",
-    "dist:stage": "tarima -fqe stage",
-    "juice": "juice build/index.html build/index.out.html"
+    "dist:stage": "tarima -fqe stage"
   },
   "tarima": {
     "src": "src/**/*",
@@ -59,7 +58,6 @@
   "license": "MIT",
   "devDependencies": {
     "buble": "^0.15.2",
-    "juice": "^4.0.2",
     "less": "^2.7.2",
     "less-plugin-autoprefix": "^1.5.1",
     "pug": "^2.0.0-beta11",
