@@ -21,22 +21,31 @@ html
         include _partials/logotype
 
         .push.centered
-          img(src=HOST + 'images/icon-cart.png' width=160 height=140 alt='Abandoned checkout')
+          img(src=ASSET_CART_URL width=160 height=140 alt='Abandoned checkout')
 
         .push.centered
           h3 {{email_title}}
 
         .push
           p.text.
-            {{email_body}}
+            {% if custom_message != blank %}
+            {{ custom_message }}
+            {% else %}
+            {{ email_body }}
+            {% endif %}
 
-            Complete your order of the following products and let us bring urban farming to you!
+          p.text
+            |{% if order_status_url %}
+            |#[a(href='{{order_status_url}}' target='_blank') Complete your order] of the following products and let us bring urban farming to you!
+            |{% else %}
+            |#[a(href='{{shop.url}}' target='_blank') Complete your order] of the following products and let us bring urban farming to you!
+            |{% endif %}
 
         .push
           +cartItems
 
         .push.pull
-          a.btn(href='{{order_status_url}}') Complete your order!
+          a.btn(href='{{order_status_url}}' target='_blank') Complete your order!
 
         .push.centered
           small.grey If you experience any problems placing your order then please contact us at #[b 720-441-2970].
