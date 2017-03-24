@@ -37,11 +37,7 @@ html
               {% endif %}
 
             p.text
-              |{% if order_status_url %}
               |#[a(href='{{order_status_url}}' target='_blank') Complete your order] of the following products and let us bring urban farming to you!
-              |{% else %}
-              |#[a(href='{{shop.url}}' target='_blank') Complete your order] of the following products and let us bring urban farming to you!
-              |{% endif %}
 
           .push
             +cartItems
