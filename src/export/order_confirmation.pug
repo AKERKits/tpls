@@ -15,69 +15,70 @@ html
     title {{email_title}}
     style <@import "styles.css">
   body
-    include ../_partials/header
+    .wrapper
+      include ../_partials/header
 
-    .templateColumns
-      .templateRowContainer
-        include ../_partials/logotype
+      .templateColumns
+        .templateRowContainer
+          include ../_partials/logotype
 
-        |{% for line in line_items %}
-        |  {% assign product = line.product | join:',' %}
-        |  {% break %}
-        |{% endfor %}
+          |{% for line in line_items %}
+          |  {% assign product = line.product | join:',' %}
+          |  {% break %}
+          |{% endfor %}
 
-        |{% assign productTags = product.tags | join:',' %}
+          |{% assign productTags = product.tags | join:',' %}
 
-        .push.centered
-          |{% if productTags contains 'source' %}
-          img(src=ASSET_CNC_URL width=112 height=142 alt='Source files')
-          |{% else %}
-          img(src=ASSET_CART_URL width=160 height=140 alt='Purchased Kits')
+          .push.centered
+            |{% if productTags contains 'source' %}
+            img(src=ASSET_CNC_URL width=112 height=142 alt='Source files')
+            |{% else %}
+            img(src=ASSET_CART_URL width=160 height=140 alt='Purchased Kits')
+            |{% endif %}
+
+          .push.centered
+            h3 {{email_title}}
+
+          |{% if custom_message != blank %}
+          .push {{ custom_message }}
           |{% endif %}
 
-        .push.centered
-          h3 {{email_title}}
+          .push
+            |{% if productTags contains 'source' %}
+            p.text Time to make some kits!
+            |{% else %}
+            p.text You will recieve your kit(s) soon.
+            |{% endif %}
 
-        |{% if custom_message != blank %}
-        .push {{ custom_message }}
-        |{% endif %}
+          .push
+            +cartItems
 
-        .push
-          |{% if productTags contains 'source' %}
-          p.text Time to make some kits!
-          |{% else %}
-          p.text You will recieve your kit(s) soon.
-          |{% endif %}
+          .push
+            |{% if productTags contains 'source' %}
+            p.text Now that you’ve downloaded the source files files, you can go ahead and start building!
+            p.text.
+              Our kits are always in constant improvement,
+              so don’t forget to visit our #[a(href='https://community.akerkits.com/' target='_blank') Community Forum]
+              where you can provide your feedback and get support.
+            |{% else %}
+            p.text.
+              Don’t forget to visit our #[a(href='https://community.akerkits.com/' target='_blank') Community Forum]
+              where you can ask questions and get support.
+            |{% endif %}
 
-        .push
-          +cartItems
+          .push.blue.spot
+            |{% if productTags contains 'source' %}
+            .right.pull
+              a.btn(href='https://community.akerkits.com/c/design' target='_blank') Visit
 
-        .push
-          |{% if productTags contains 'source' %}
-          p.text Now that you’ve downloaded the source files files, you can go ahead and start building!
-          p.text.
-            Our kits are always in constant improvement,
-            so don’t forget to visit our #[a(href='https://community.akerkits.com/' target='_blank') Community Forum]
-            where you can provide your feedback and get support.
-          |{% else %}
-          p.text.
-            Don’t forget to visit our #[a(href='https://community.akerkits.com/' target='_blank') Community Forum]
-            where you can ask questions and get support.
-          |{% endif %}
+            h4 AKER Kits Design
+            |{% else %}
+            .right.pull
+              a.btn(href='https://community.akerkits.com/c/aker-community' target='_blank') Visit
 
-        .push.blue.spot
-          |{% if productTags contains 'source' %}
-          .right.pull
-            a.btn(href='https://community.akerkits.com/c/design' target='_blank') Visit
+            h4 AKER Community
+            |{% endif %}
 
-          h4 AKER Kits Design
-          |{% else %}
-          .right.pull
-            a.btn(href='https://community.akerkits.com/c/aker-community' target='_blank') Visit
+          .blank &nbsp;
 
-          h4 AKER Community
-          |{% endif %}
-
-        .blank &nbsp;
-
-    include ../_partials/footer
+      include ../_partials/footer

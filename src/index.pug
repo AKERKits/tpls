@@ -4,25 +4,26 @@ html
     title AKER Kits
     style <@import "styles.css">
   body
-    include _partials/header
+    .wrapper
+      include _partials/header
 
-    .templateColumns
-      .templateRowContainer
-        include _partials/logotype
+      .templateColumns
+        .templateRowContainer
+          include _partials/logotype
 
-        .push
-          h4 Base templates
-          ul
-            li: a(href='digest.html') Digest
-            li: a(href='cart.html') Abandoned cart
-            li: a(href='source.html') Source file
-            li: a(href='kit.html') Purchased kit
+          .push
+            h4 Base templates
+            ul
+              li: a(href='digest.html') Digest
+              li: a(href='cart.html') Abandoned cart
+              li: a(href='source.html') Source file
+              li: a(href='kit.html') Purchased kit
 
-          h4 Final templates
-          ul
-            li: a(href='export/abandoned_cart.html') Abandoned checkout
-            li: a(href='export/order_confirmation.html') Order confirmation
+            h4 Final templates
+            ul
+              li: a(href='export/abandoned_cart.html') Abandoned checkout
+              li: a(href='export/order_confirmation.html') Order confirmation
 
-        .blank &nbsp;
+          .blank &nbsp;
 
-    include _partials/footer
+      include _partials/footer

@@ -15,42 +15,43 @@ html
     title {{email_title}}
     style <@import "styles.css">
   body
-    include ../_partials/header
+    .wrapper
+      include ../_partials/header
 
-    .templateColumns
-      .templateRowContainer
-        include ../_partials/logotype
+      .templateColumns
+        .templateRowContainer
+          include ../_partials/logotype
 
-        .push.centered
-          img(src=ASSET_CART_URL width=160 height=140 alt='Abandoned checkout')
+          .push.centered
+            img(src=ASSET_CART_URL width=160 height=140 alt='Abandoned checkout')
 
-        .push.centered
-          h3 {{email_title}}
+          .push.centered
+            h3 {{email_title}}
 
-        .push
-          p.text.
-            {% if custom_message != blank %}
-            {{ custom_message }}
-            {% else %}
-            {{ email_body }}
-            {% endif %}
+          .push
+            p.text.
+              {% if custom_message != blank %}
+              {{ custom_message }}
+              {% else %}
+              {{ email_body }}
+              {% endif %}
 
-          p.text
-            |{% if order_status_url %}
-            |#[a(href='{{order_status_url}}' target='_blank') Complete your order] of the following products and let us bring urban farming to you!
-            |{% else %}
-            |#[a(href='{{shop.url}}' target='_blank') Complete your order] of the following products and let us bring urban farming to you!
-            |{% endif %}
+            p.text
+              |{% if order_status_url %}
+              |#[a(href='{{order_status_url}}' target='_blank') Complete your order] of the following products and let us bring urban farming to you!
+              |{% else %}
+              |#[a(href='{{shop.url}}' target='_blank') Complete your order] of the following products and let us bring urban farming to you!
+              |{% endif %}
 
-        .push
-          +cartItems
+          .push
+            +cartItems
 
-        .push.pull
-          a.btn(href='{{order_status_url}}' target='_blank') Complete your order!
+          .push.pull
+            a.btn(href='{{order_status_url}}' target='_blank') Complete your order!
 
-        .push.centered
-          small.grey If you experience any problems placing your order then please contact us at #[b 720-441-2970].
+          .push.centered
+            small.grey If you experience any problems placing your order then please contact us at #[b 720-441-2970].
 
-        .blank &nbsp;
+          .blank &nbsp;
 
-    include ../_partials/footer
+      include ../_partials/footer

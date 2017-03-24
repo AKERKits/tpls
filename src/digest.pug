@@ -4,19 +4,20 @@ html
     title AKER Kits
     style <@import "styles.css">
   body
-    include _partials/header
+    .wrapper
+      include _partials/header
 
-    .templateColumns
-      .templateRowContainer
-        include _partials/logotype
-        include _partials/hero
+      .templateColumns
+        .templateRowContainer
+          include _partials/logotype
+          include _partials/hero
 
-        include _partials/section
-        include _partials/grid
+          include _partials/section
+          include _partials/grid
 
-        .push.pull
-          a.btn(href='#') Purchase now!
+          .push.pull
+            a.btn(href='#') Purchase now!
 
-        .blank &nbsp;
+          .blank &nbsp;
 
-    include _partials/footer
+      include _partials/footer
