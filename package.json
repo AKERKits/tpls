@@ -6,11 +6,8 @@
   },
   "scripts": {
     "dev": "yarn dev:server -- -s",
-    "dev:server": "tarima -dwp $npm_package_config_dev",
-    "dist": "tarima -fq",
-    "dist:ci": "tarima -fqe ci",
-    "dist:prod": "tarima -fqe prod",
-    "dist:stage": "tarima -fqe stage"
+    "dev:server": "tarima -wp $npm_package_config_dev",
+    "dist": "tarima -fq"
   },
   "tarima": {
     "env": {
@@ -42,16 +39,11 @@
       "tarima-lr"
     ],
     "plugins": [
-      "talavera",
-      "tarima-juice"
+      "talavera"
     ],
     "pluginOptions": {
       "talavera": {
         "dest": "images"
-      },
-      "tarima-juice": {
-        "images": false,
-        "styles": false
       }
     },
     "bundleOptions": {
@@ -77,8 +69,7 @@
     "pug": "^2.0.0-beta11",
     "rollup": "^0.41.6",
     "talavera": "^0.2.1",
-    "tarima-cli": "^0.3.11",
-    "tarima-juice": "^0.1.2"
+    "tarima-cli": "^0.3.11"
   },
   "optionalDependencies": {
     "chokidar": "^1.6.1",
