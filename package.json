@@ -14,10 +14,14 @@
   },
   "tarima": {
     "env": {
-      "HOST": "",
-      "prod": {
-        "HOST": "https://akerkit.myshopify.com"
-      }
+      "ASSET_LOGOTYPE_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/logotype-color.png?3015493557916693308",
+      "ASSET_INSTAGRAM_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/icon-instagram.png?3015493557916693308",
+      "ASSET_TWITTER_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/icon-twitter.png?3015493557916693308",
+      "ASSET_FACEBOOK_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/icon-facebook.png?3015493557916693308",
+      "ASSET_EMAIL_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/icon-email.png?3015493557916693308",
+      "ASSET_CNC_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/icon-cnc.png?3015493557916693308",
+      "ASSET_KITS_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/aker-kits.png?3015493557916693308",
+      "ASSET_CART_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/icon-cart.png?3015493557916693308"
     },
     "filter": [
       "!_*",
@@ -46,7 +50,8 @@
         "dest": "images"
       },
       "tarima-juice": {
-        "images": false
+        "images": false,
+        "styles": false
       }
     },
     "bundleOptions": {

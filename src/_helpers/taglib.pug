@@ -22,15 +22,15 @@ mixin cartItems
       td(width='100%')
         h4 {{ line_title }}
         p.
-          |{% if line.variant.title != 'Default Title' %}
-          |{{ line.variant.title }}&nbsp;&nbsp;&middot;&nbsp;&nbsp;
-          |{% endif %}
+          {% if line.variation.title %}
+          {{ line.variation.title }}&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+          {% endif %}
 
-          |{% if line.original_line_price != line.line_price %}
-          |#[del {{ line.original_line_price | money }}]
-          |{% endif %}
+          {% if line.original_line_price != line.line_price %}
+          #[del {{ line.original_line_price | money }}]
+          {% endif %}
 
-          |#[span {{ line.line_price | money }}]
+          #[span {{ line.line_price | money }}]
 
-          |#[small × {{ line_display }}]
+          #[small × {{ line_display }}]
     |{% endfor %}
