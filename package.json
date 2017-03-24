@@ -13,6 +13,12 @@
     "dist:stage": "tarima -fqe stage"
   },
   "tarima": {
+    "env": {
+      "HOST": "",
+      "prod": {
+        "HOST": "https://akerkit.myshopify.com"
+      }
+    },
     "filter": [
       "!_*",
       "!**/_*",
@@ -38,6 +44,9 @@
     "pluginOptions": {
       "talavera": {
         "dest": "images"
+      },
+      "tarima-juice": {
+        "images": false
       }
     },
     "bundleOptions": {

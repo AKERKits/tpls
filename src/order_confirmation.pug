@@ -1,0 +1,62 @@
+include _helpers/taglib
+
+if env === 'prod'
+  |{% capture email_title %}Thank you for your purchase! {% endcapture %}
+  |{% capture email_body %}
+  |  {% if requires_shipping %}
+  |    Hi {{ customer.first_name }}, we're getting your order ready to be shipped. We will notify you when it has been sent.
+  |  {% endif %}
+  |{% endcapture %}
+
+doctype html
+html
+  head
+    title {{email_title}}
+    link(rel='stylesheet' href='styles.css')
+  body
+    include _partials/header
+
+    .templateColumns
+      .templateRowContainer
+        include _partials/logotype
+
+        .push.centered
+          img(src=HOST + 'images/icon-cart.png' width=160 height=140 alt='Abandoned checkout')
+
+        .push.centered
+          h3 {{email_title}}
+
+        .push
+          p.text You will recieve your kit(s) soon.
+
+        .push
+          +cartItems
+
+        .push
+          p.text
+            |{% if order_status_url %}
+            a(href='{{order_status_url}}') View your order
+            |{% if shop.url %}
+            |&nbsp;or&nbsp;
+            a(href='{{shop.url}}') Visit our store
+            |{% endif %}
+            |{% else %}
+            |{% if shop.url %}
+            a(href='{{shop.url}}') Visit our store
+            |{% endif %}
+            |{% endif %}
+
+          p.text.
+            Don’t forget to visit our #[a(href='#') Community Forum]
+            where you can ask questions and get support.
+
+        .push.blue.spot
+          .right.pull
+            a.btn(href='#') Visit
+
+          h4 AKER Community
+          small 8 topics
+
+        .blank &nbsp;
+
+    include _partials/footer
