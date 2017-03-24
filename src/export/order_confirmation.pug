@@ -1,24 +1,25 @@
-include _helpers/taglib
+include ../_helpers/taglib
 
-if env === 'prod'
-  |{% capture email_title %}Thank you for your purchase! {% endcapture %}
-  |{% capture email_body %}
-  |  {% if requires_shipping %}
-  |    Hi {{ customer.first_name }}, we're getting your order ready to be shipped. We will notify you when it has been sent.
-  |  {% endif %}
-  |{% endcapture %}
+|<!--
+|{% capture email_title %}Thank you for your purchase! {% endcapture %}
+|{% capture email_body %}
+|  {% if requires_shipping %}
+|    Hi {{ customer.first_name }}, we're getting your order ready to be shipped. We will notify you when it has been sent.
+|  {% endif %}
+|{% endcapture %}
+|-->
 
 doctype html
 html
   head
     title {{email_title}}
-    link(rel='stylesheet' href='styles.css')
+    style <@import "styles.css">
   body
-    include _partials/header
+    include ../_partials/header
 
     .templateColumns
       .templateRowContainer
-        include _partials/logotype
+        include ../_partials/logotype
 
         |{% for line in line_items %}
         |  {% assign product = line.product | join:',' %}
@@ -79,4 +80,4 @@ html
 
         .blank &nbsp;
 
-    include _partials/footer
+    include ../_partials/footer

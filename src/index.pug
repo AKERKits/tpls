@@ -2,8 +2,7 @@ doctype html
 html
   head
     title AKER Kits
-    base(href='/')
-    link(rel='stylesheet' href='styles.css')
+    style <@import "styles.css">
   body
     include _partials/header
 
@@ -12,12 +11,17 @@ html
         include _partials/logotype
 
         .push
-          h4 EMAIL Templates
+          h4 Base templates
           ul
             li: a(href='digest.html') Digest
             li: a(href='cart.html') Abandoned cart
             li: a(href='source.html') Source file
             li: a(href='kit.html') Purchased kit
+
+          h4 Final templates
+          ul
+            li: a(href='export/abandoned_cart.html') Abandoned checkout
+            li: a(href='export/order_confirmation.html') Order confirmation
 
         .blank &nbsp;
 

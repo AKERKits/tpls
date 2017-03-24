@@ -1,24 +1,25 @@
-include _helpers/taglib
+include ../_helpers/taglib
 
-if env === 'prod'
-  |{% capture email_title %} Your shopping cart is waiting for you {% endcapture %}
-  |{% capture email_body %}
-  |{% if billing_address.first_name %}Hi {{ billing_address.first_name }}, w{% else %}
-  |W{% endif %}e noticed there {% if item_count == 1 %}was an item{% else %}were some items{% endif %} left in your shopping cart.
-  |If you're ready to complete your order, your cart is waiting for your return.
-  |{% endcapture %}
+|<!--
+|{% capture email_title %} Your shopping cart is waiting for you {% endcapture %}
+|{% capture email_body %}
+|{% if billing_address.first_name %}Hi {{ billing_address.first_name }}, w{% else %}
+|W{% endif %}e noticed there {% if item_count == 1 %}was an item{% else %}were some items{% endif %} left in your shopping cart.
+|If you're ready to complete your order, your cart is waiting for your return.
+|{% endcapture %}
+|-->
 
 doctype html
 html
   head
     title {{email_title}}
-    link(rel='stylesheet' href='styles.css')
+    style <@import "styles.css">
   body
-    include _partials/header
+    include ../_partials/header
 
     .templateColumns
       .templateRowContainer
-        include _partials/logotype
+        include ../_partials/logotype
 
         .push.centered
           img(src=ASSET_CART_URL width=160 height=140 alt='Abandoned checkout')
@@ -52,4 +53,4 @@ html
 
         .blank &nbsp;
 
-    include _partials/footer
+    include ../_partials/footer
