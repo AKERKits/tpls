@@ -1,5 +1,7 @@
 table(border=0 cellpadding=0 cellspacing=0 width='100%')
   tr: td
-    .push
-      h3(mc:edit) Welcome |USERNAME| to the AKER family!
-      p.text(mc:edit) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.
+    .push(mc:hideable)
+      h3(mc:edit='section-title') Welcome |USERNAME| to the AKER family!
+      p.text(mc:edit='section-content') Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.
+
+    .push(mc:hideable mc:edit)
