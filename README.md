@@ -17,11 +17,9 @@ It's good idea to copy a base template, under `src/export` to start hacking!
 
 ## How to build
 
-1. Once you got a working template just copy the source-code directly from your browser.
-2. Paste it into shopify's custom notifications editor and preview it.
+1. Once you got a working template run `yarn dist` and copy the wanted source from `build` files
+2. Paste it into Shopify's custom notifications (or Mailchimp) editor and preview it.
 3. if everything works as expected you've done.
-
-Run `yarn dist` if you want a fresh build.
 
 ### Orders
 
