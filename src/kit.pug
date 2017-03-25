@@ -1,36 +1,22 @@
-doctype html
-html
-  head
-    title AKER Kits
-    style <@import "styles.css">
-  body
-    .wrapper
-      include _partials/header
+extend _layouts/default
 
-      .templateColumns
-        .templateRowContainer
-          include _partials/logotype
+block content
+  .push.centered
+    img(src='//placehold.it/120x170')
 
-          .push.centered
-            img(src='//placehold.it/120x170')
+  .push.centered
+    h3 Thank you for your purchase!
 
-          .push.centered
-            h3 Thank you for your purchase!
+  .push
+    p.text.
+      You will recieve your #[b |KIT_NAME|] soon.
 
-          .push
-            p.text.
-              You will recieve your #[b |KIT_NAME|] soon.
+      Don’t forget to visit our #[a(href='#') Community Forum]
+      where you can ask questions and get support.
 
-              Don’t forget to visit our #[a(href='#') Community Forum]
-              where you can ask questions and get support.
+  .push.blue.spot
+    .right.pull
+      a.btn(href='#') Visit
 
-          .push.blue.spot
-            .right.pull
-              a.btn(href='#') Visit
-
-            h4 AKER Community
-            small 8 topics
-
-          .blank &nbsp;
-
-      include _partials/footer
+    h4 AKER Community
+    small 8 topics

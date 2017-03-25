@@ -1,0 +1,14 @@
+extend ../_layouts/default
+
+block title
+  meta(property='og:title' content='*|MC:SUBJECT|*')
+  title *|MC:SUBJECT|*
+
+block content
+  include ../_partials/hero
+
+  include ../_partials/section
+  include ../_partials/grid
+
+  .push.pull
+    a.btn(href='{{shop.url}}' mc:edit) Purchase now!

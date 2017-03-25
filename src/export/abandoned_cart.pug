@@ -1,53 +1,42 @@
-include ../_helpers/taglib
+extend ../_layouts/default
 
-|<!--
-|{% capture email_title %} Your shopping cart is waiting for you {% endcapture %}
-|{% capture email_body %}
-|{% if billing_address.first_name %}Hi {{ billing_address.first_name }}, w{% else %}
-|W{% endif %}e noticed there {% if item_count == 1 %}was an item{% else %}were some items{% endif %} left in your shopping cart.
-|If you're ready to complete your order, your cart is waiting for your return.
-|{% endcapture %}
-|-->
+block title
+  meta(property='og:title' content='*|MC:SUBJECT|*')
+  title *|MC:SUBJECT|*
 
-doctype html
-html
-  head
-    title {{email_title}}
-    style <@import "styles.css">
-  body
-    .wrapper
-      include ../_partials/header
+block prelude
+  |<!--
+  |{% capture email_title %} Your shopping cart is waiting for you {% endcapture %}
+  |{% capture email_body %}
+  |{% if billing_address.first_name %}Hi {{ billing_address.first_name }}, w{% else %}
+  |W{% endif %}e noticed there {% if item_count == 1 %}was an item{% else %}were some items{% endif %} left in your shopping cart.
+  |If you're ready to complete your order, your cart is waiting for your return.
+  |{% endcapture %}
+  |-->
 
-      .templateColumns
-        .templateRowContainer
-          include ../_partials/logotype
+block content
+  .push.centered
+    img(src=ASSET_CART_URL width=160 height=140 alt='Abandoned checkout')
 
-          .push.centered
-            img(src=ASSET_CART_URL width=160 height=140 alt='Abandoned checkout')
+  .push.centered
+    h3 {{email_title}}
 
-          .push.centered
-            h3 {{email_title}}
+  .push
+    p.text.
+      {% if custom_message != blank %}
+      {{ custom_message }}
+      {% else %}
+      {{ email_body }}
+      {% endif %}
 
-          .push
-            p.text.
-              {% if custom_message != blank %}
-              {{ custom_message }}
-              {% else %}
-              {{ email_body }}
-              {% endif %}
+    p.text
+      |#[a(href='{{order_status_url}}' target='_blank') Complete your order] of the following products and let us bring urban farming to you!
 
-            p.text
-              |#[a(href='{{order_status_url}}' target='_blank') Complete your order] of the following products and let us bring urban farming to you!
+  .push
+    +cartItems
 
-          .push
-            +cartItems
+  .push.pull
+    a.btn(href='{{order_status_url}}' target='_blank') Complete your order!
 
-          .push.pull
-            a.btn(href='{{order_status_url}}' target='_blank') Complete your order!
-
-          .push.centered
-            small.grey If you experience any problems placing your order then please contact us at #[b 720-441-2970].
-
-          .blank &nbsp;
-
-      include ../_partials/footer
+  .push.centered
+    small.grey If you experience any problems placing your order then please contact us at #[b 720-441-2970].

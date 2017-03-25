@@ -1,0 +1,23 @@
+include ../_helpers/taglib
+block prelude
+doctype html
+html
+  head
+    base(href='/')
+    link(rel='stylesheet' href='styles.css')
+
+    block title
+      title AKER Kits
+  body
+    .wrapper
+      include ../_partials/header
+
+      .templateColumns
+        .templateRowContainer
+          include ../_partials/logotype
+
+          block content
+
+          .blank &nbsp;
+
+      include ../_partials/footer
