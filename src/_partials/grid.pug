@@ -1,4 +1,4 @@
-.push(mc:hideable)
+.push(mc:hideable mc:repeatable)
   table.templateColumns(mc:hideable border=0 cellpadding=0 cellspacing=0)
     tr
       td.templateColumnContainer(align='center' valign='top' width='50%')
@@ -12,7 +12,8 @@
             h4(mc:edit='first-content') Easy to assemble!
 
   table.templateColumns(mc:hideable border=0 cellpadding=0 cellspacing=0)
-    tr: td.back.cover(mc:edit='middle-picture' style='background-image:url(//placehold.it/620x260)') &nbsp;
+    tr: td.back.cover
+      img.fit(mc:edit='middle-picture' src='https://placehold.it/620x260')
 
   table.templateColumns(mc:hideable border=0 cellpadding=0 cellspacing=0)
     tr
