@@ -1,0 +1,24 @@
+extend ../_layouts/default
+
+block title
+  meta(property='og:title' content='*|MC:SUBJECT|*')
+  title *|MC:SUBJECT|*
+
+block content
+  .push.centered
+    img(src=ASSET_CART_URL width=160 height=140 alt='Purchased Kits' mc:edit='product_image')
+
+  .push.centered
+    h3(mc:edit='product_label') Thank you for your purchase!
+
+  .push(mc:edit='product_intro')
+    p.text.
+      Don’t forget to visit our #[a(href='https://community.akerkits.com/' target='_blank') Community Forum]
+      where you can ask questions and get support.
+
+  .push.green.spot(mc:edit='product_forum')
+    .right.pull
+      a.btn(href='https://community.akerkits.com/c/aker-community' target='_blank' mc:link='community-link') Visit
+
+    h4(mc:edit='community-forum') AKER Community
+    small(mc:edit='community-posts') 0 topics
