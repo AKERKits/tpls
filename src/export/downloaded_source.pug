@@ -18,9 +18,17 @@ block content
       so don’t forget to visit our #[a(href='https://community.akerkits.com/' target='_blank') Community Forum]
       where you can provide your feedback and get support.
 
-  .push.blue.spot(mc:edit='product_forum')
-    .right.pull
-      a.btn(href='https://community.akerkits.com/c/design' target='_blank' mc:link='community-link') Visit
+  .push.blue.spot(mc:hideable)
+    .templateColumns
+      table(border=0 cellpadding=0 cellspacing=0 width='100%')
+        tr.fix
+          td.break.templateColumnContainer(align='center' valign='top' width='70%')
+            table(border=0 cellpadding=0 cellspacing=0 width='100%')
+              tr: td.columnContent
+                h4(mc:edit='community-forum') AKER Kits Design
+                small(mc:edit='community-posts') 0 topics
 
-    h4(mc:edit='community-forum') AKER Kits Design
-    small(mc:edit='community-posts') 0 topics
+          td.break.templateColumnContainer(align='center' valign='top' width='30%')
+            table(border=0 cellpadding=0 cellspacing=0 width='100%')
+              tr: td.columnContent.pull
+                a.btn(href='https://community.akerkits.com/c/design' target='_blank' mc:link='community-link') Visit
