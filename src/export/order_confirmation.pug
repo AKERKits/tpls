@@ -1,54 +1,68 @@
+//-
+  ---
+  line_items:
+  - { "image": "x", "original_line_price": 244, "line_price": 123, "quantity": 1, "product": { "title": "A", "tags": [] } }
+  - { "image": "x", "original_line_price": 123, "line_price": 123, "quantity": 1, "product": { "title": "B", "tags": ["baz"] } }
+  - { "image": "x", "original_line_price": 123, "line_price": 123, "quantity": 1, "product": { "title": "C", "tags": ["source"] } }
+  ---
+
 extend ../_layouts/default
 
 block title
   meta(property='og:title' content='{{email_title}}')
   title {{email_title}}
 
-block prelude
-  |<!--
-  |{% capture email_title %}Thank you for your purchase! {% endcapture %}
-  |{% capture email_body %}
-  |  {% if requires_shipping %}
-  |    Hi {{ customer.first_name }}, we're getting your order ready to be shipped. We will notify you when it has been sent.
-  |  {% endif %}
-  |{% endcapture %}
-  |-->
-
 block content
-  |{% for line in line_items %}
-  |  {% assign product = line.product | join:',' %}
-  |  {% break %}
+  |{% assign has_sources = false %}
+  |{% assign has_kits = false %}
+  |{% for x in line_items %}
+  |  {% if x.product.tags contains 'source' %}
+  |    {% assign has_sources = true %}
+  |  {% else %}
+  |    {% assign has_kits = true %}
+  |  {% endif %}
   |{% endfor %}
 
-  |{% assign productTags = product.tags | join:',' %}
-
   .push.centered
-    |{% if productTags contains 'source' %}
-    img(src=ASSET_CNC_URL width=112 height=142 alt='Source files')
-    |{% else %}
+    |{% if has_kits %}
     img(src=ASSET_CART_URL width=160 height=140 alt='Purchased Kits')
+    |{% else %}
+    img(src=ASSET_CNC_URL width=112 height=142 alt='Source files')
     |{% endif %}
 
   .push.centered
-    h3 {{email_title}}
+    |{% if has_kits %}
+    h3 Thank you for your purchase!
+    |{% else %}
+    h3 Time to make some kits!
+    |{% endif %}
+
+  |{% if requires_shipping %}
+  .push Hi {{ customer.first_name }}, we're getting your order ready to be shipped. We will notify you when it has been sent.
+  |{% endif %}
 
   |{% if custom_message != blank %}
   .push {{ custom_message }}
   |{% endif %}
 
+  |{% if has_kits %}
   .push
-    |{% if productTags contains 'source' %}
-    p.text Time to make some kits!
-    |{% else %}
     p.text You will recieve your kit(s) soon.
-    |{% endif %}
+    +kitItems
+  |{% endif %}
+
+  |{% if has_sources %}
+  .push
+    p.text Your source files are ready!
+    +sourceItems
+    p.text Once you’ve downloaded the source files files, you can go ahead and start building!
+
+  .push.pull
+    a.btn(href='{{order_status_url}}' target='_blank') Download your files
+  |{% endif %}
 
   .push
-    +cartItems
-
-  .push
-    |{% if productTags contains 'source' %}
-    p.text Now that you’ve downloaded the source files files, you can go ahead and start building!
+    |{% if has_sources %}
     p.text.
       Our kits are always in constant improvement,
       so don’t forget to visit our #[a(href='https://community.akerkits.com/' target='_blank') Community Forum]
@@ -59,7 +73,7 @@ block content
       where you can ask questions and get support.
     |{% endif %}
 
-  |{% if productTags contains 'source' %}
+  |{% if has_sources %}
   .push.blue.spot
     .templateColumns
       table(border=0 cellpadding=0 cellspacing=0 width='100%')
