@@ -6,7 +6,7 @@ block title
 
 block content
   .push.centered
-    img(src=ASSET_CART_URL width=160 height=140 alt='Purchased Kits' mc:edit='product_image')
+    img.fit(src=ASSET_CART_URL width=160 height=140 alt='Purchased Kits' mc:edit='product_image')
 
   .push.centered
     h3(mc:edit='product_label') Thank you for your purchase!
@@ -26,7 +26,7 @@ block content
                 h4(mc:edit='community-forum') AKER Community
                 small(mc:edit='community-posts') 0 topics
 
-          td.break.templateColumnContainer(align='center' valign='top' width='30%')
+          td.templateColumnContainer(align='center' valign='top' width='30%')
             table(border=0 cellpadding=0 cellspacing=0 width='100%')
               tr: td.columnContent.pull
                 a.btn(href='https://community.akerkits.com/c/aker-community' target='_blank' mc:link='community-link') Visit

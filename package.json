@@ -36,7 +36,8 @@
       ".gitignore"
     ],
     "devPlugins": [
-      "tarima-lr"
+      "tarima-lr",
+      "tarima-juice"
     ],
     "plugins": [
       "talavera"
@@ -44,6 +45,9 @@
     "pluginOptions": {
       "talavera": {
         "dest": "images"
+      },
+      "tarima-juice": {
+        "images": false
       }
     },
     "bundleOptions": {
@@ -73,6 +77,7 @@
   },
   "optionalDependencies": {
     "chokidar": "^1.6.1",
-    "tarima-lr": "0.0.11"
+    "tarima-lr": "0.0.11",
+    "tarima-juice": "^0.1.3"
   }
 }

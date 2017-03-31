@@ -233,15 +233,13 @@ h4 {
   width: 100%;
 }
 
-.fix {
-  .break ~ .break {
-    margin-top: 20px;
-  }
+.break {
+  margin-bottom: 20px;
 }
 
 @media only screen and (max-width:  480px) {
   .templateColumns {
-    width: 100%;
+    width: 100% !important;
   }
 
   .columnContent {
@@ -271,14 +269,12 @@ h4 {
 }
 
 @media only screen and (min-width:  481px) {
-  .fix {
-    .templateColumnContainer {
-      display: table-cell;
-      width: auto;
-    }
+  .templateColumnContainer {
+    display: table-cell !important;
+    width: auto !important;
+  }
 
-    &.half .templateColumnContainer {
-      width: 50%;
-    }
+  .half {
+    width: 50% !important;
   }
 }
