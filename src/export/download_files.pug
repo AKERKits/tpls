@@ -1,0 +1,63 @@
+//-
+  ---
+  shop:
+    name: AKERKits
+  customer:
+    first_name: John
+    last_name: Doe
+  attachments:
+  - { "product_name": "A", "name": "X", "shop_url": "#" }
+  - { "product_name": "B", "name": "X", "shop_url": "#" }
+  ---
+
+extend ../_layouts/default
+
+block prelude
+  |<!--
+  ||{% capture email_title %} Thank you for your purchase! {% endcapture %}
+  |-->
+
+block title
+  meta(property='og:title' content='{{email_title}}')
+  title {{email_title}}
+
+block content
+  .push.centered
+    img(src=ASSET_CNC_URL width=112 height=142 alt='Source files')
+
+  .push
+    h3 {{email_title}}
+    p.text Hey {{customer.first_name}} {{customer.last_name}}, your source files are ready:
+
+  |{% for attachment in attachments %}
+  .push
+    h5 {{ attachment.product_name }}
+    p.text Attachment: {{ attachment.name }}
+    p.text Download Link: #[a(href='{{ attachment.shop_url }}') {{ attachment.shop_url }}]
+  |{% endfor %}
+
+  .push
+    p.text Enjoy,
+    p.text {{ shop.name }}
+
+  hr
+
+  .push
+    p.text.
+      Our kits are always in constant improvement,
+      so don’t forget to visit our #[a(href='https://community.akerkits.com/' target='_blank') Community Forum]
+      where you can provide your feedback and get support.
+
+  .push.blue.spot
+    .templateColumns
+      table(border=0 cellpadding=0 cellspacing=0 width='100%')
+        tr.fix
+          td.break.templateColumnContainer(align='center' valign='top' width='70%')
+            table(border=0 cellpadding=0 cellspacing=0 width='100%')
+              tr: td.columnContent
+                h4 AKER Kits Design
+
+          td.templateColumnContainer(align='center' valign='top' width='30%')
+            table(border=0 cellpadding=0 cellspacing=0 width='100%')
+              tr: td.columnContent.pull
+                a.btn(href='https://community.akerkits.com/c/design' target='_blank') Visit

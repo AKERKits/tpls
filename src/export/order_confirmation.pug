@@ -8,11 +8,8 @@
 
 extend ../_layouts/default
 
-block title
-  meta(property='og:title' content='{{email_title}}')
-  title {{email_title}}
-
-block content
+block prelude
+  |<!--
   |{% assign has_sources = false %}
   |{% assign has_kits = false %}
   |{% for x in line_items %}
@@ -22,7 +19,18 @@ block content
   |    {% assign has_kits = true %}
   |  {% endif %}
   |{% endfor %}
+  |{% if has_kits %}
+  |{% capture email_title %} Thank you for your purchase! {% endcapture %}
+  |{% else %}
+  |{% capture email_title %} Time to make some kits! {% endcapture %}
+  |{% endif %}
+  |-->
 
+block title
+  meta(property='og:title' content='{{email_title}}')
+  title {{email_title}}
+
+block content
   .push.centered
     |{% if has_kits %}
     img(src=ASSET_CART_URL width=160 height=140 alt='Purchased Kits')
@@ -31,11 +39,7 @@ block content
     |{% endif %}
 
   .push.centered
-    |{% if has_kits %}
-    h3 Thank you for your purchase!
-    |{% else %}
-    h3 Time to make some kits!
-    |{% endif %}
+    h3 {{email_title}}
 
   |{% if requires_shipping %}
   .push Hi {{ customer.first_name }}, we're getting your order ready to be shipped. We will notify you when it has been sent.
