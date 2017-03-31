@@ -34,7 +34,8 @@ mixin _cartPrelude
 mixin kitItems
   table.items(border=1 cellpadding=0 cellspacing=0 width='100%')
     |{% for line in line_items %}
-    |{% unless line.product.tags contains 'source' %}
+    |{% assign productTags = line.product.tags | join: ' ' %}
+    |{% unless productTags contains 'source' %}
     +_cartPrelude
     |{% endunless %}
     |{% endfor %}
@@ -42,7 +43,8 @@ mixin kitItems
 mixin sourceItems
   table.items(border=1 cellpadding=0 cellspacing=0 width='100%')
     |{% for line in line_items %}
-    |{% if line.product.tags contains 'source' %}
+    |{% assign productTags = line.product.tags | join: ' ' %}
+    |{% if productTags contains 'source' %}
     +_cartPrelude
     |{% endif %}
     |{% endfor %}

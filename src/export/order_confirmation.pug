@@ -1,8 +1,6 @@
 //-
   ---
   line_items:
-  - { "image": "x", "original_line_price": 244, "line_price": 123, "quantity": 1, "product": { "title": "A", "tags": [] } }
-  - { "image": "x", "original_line_price": 123, "line_price": 123, "quantity": 1, "product": { "title": "B", "tags": ["baz"] } }
   - { "image": "x", "original_line_price": 123, "line_price": 123, "quantity": 1, "product": { "title": "C", "tags": ["source"] } }
   ---
 
@@ -13,7 +11,8 @@ block prelude
   |{% assign has_sources = false %}
   |{% assign has_kits = false %}
   |{% for x in line_items %}
-  |  {% if x.product.tags contains 'source' %}
+  |  {% assign productTags = x.product.tags | join: ' ' %}
+  |  {% if productTags contains 'source' %}
   |    {% assign has_sources = true %}
   |  {% else %}
   |    {% assign has_kits = true %}
