@@ -13,10 +13,10 @@ mixin _cartPrelude
 
   tr
     |{% if line.image %}
-    td: img(src='{{ line | img_url: "compact_cropped" }}' width=100)
+    td(width='30%'): img(src='{{ line | img_url: "compact_cropped" }}')
     |{% endif %}
 
-    td(width='100%')
+    td(width='70%')
       h4 {{ line_title }}
       p.
         {% if line.variation.title %}

@@ -1,4 +1,4 @@
-extend ../_layouts/default
+extend ../../_layouts/akerkits
 
 block title
   meta(property='og:title' content='*|MC:SUBJECT|*')
@@ -13,7 +13,7 @@ block content
 
   .push(mc:edit='product_intro')
     p.text.
-      Don’t forget to visit our #[a(href='https://community.akerkits.com/' target='_blank') Community Forum]
+      Don’t forget to visit our #[a(href='//community.akerkits.com/' target='_blank') Community Forum]
       where you can ask questions and get support.
 
   .push.green.spot(mc:hideable)
@@ -29,4 +29,4 @@ block content
           td.templateColumnContainer(align='center' valign='top' width='30%')
             table(border=0 cellpadding=0 cellspacing=0 width='100%')
               tr: td.columnContent.pull
-                a.btn(href='https://community.akerkits.com/c/aker-community' target='_blank' mc:link='community-link') Visit
+                a.btn(href='//community.akerkits.com/c/aker-community' target='_blank' mc:link='community-link') Visit

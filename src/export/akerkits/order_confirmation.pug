@@ -4,7 +4,7 @@
   - { "image": "x", "original_line_price": 123, "line_price": 123, "quantity": 1, "product": { "title": "C", "tags": ["source"] } }
   ---
 
-extend ../_layouts/default
+extend ../../_layouts/akerkits
 
 block prelude
   |<!--
@@ -68,11 +68,11 @@ block content
     |{% if has_sources %}
     p.text.
       Our kits are always in constant improvement,
-      so don’t forget to visit our #[a(href='https://community.akerkits.com/' target='_blank') Community Forum]
+      so don’t forget to visit our #[a(href='//community.akerkits.com/' target='_blank') Community Forum]
       where you can provide your feedback and get support.
     |{% else %}
     p.text.
-      Don’t forget to visit our #[a(href='https://community.akerkits.com/' target='_blank') Community Forum]
+      Don’t forget to visit our #[a(href='//community.akerkits.com/' target='_blank') Community Forum]
       where you can ask questions and get support.
     |{% endif %}
 
@@ -89,7 +89,7 @@ block content
           td.templateColumnContainer(align='center' valign='top' width='30%')
             table(border=0 cellpadding=0 cellspacing=0 width='100%')
               tr: td.columnContent.pull
-                a.btn(href='https://community.akerkits.com/c/design' target='_blank') Visit
+                a.btn(href='//community.akerkits.com/c/design' target='_blank') Visit
   |{% else %}
   .push.green.spot
     .templateColumns
@@ -103,5 +103,5 @@ block content
           td.templateColumnContainer(align='center' valign='top' width='30%')
             table(border=0 cellpadding=0 cellspacing=0 width='100%')
               tr: td.columnContent.pull
-                a.btn(href='https://community.akerkits.com/c/aker-community' target='_blank') Visit
+                a.btn(href='//community.akerkits.com/c/aker-community' target='_blank') Visit
   |{% endif %}

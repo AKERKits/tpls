@@ -1,18 +1,22 @@
-extend _layouts/default
+doctype html
+html
+  head
+    title OSBH / AKERKits
+  body
+    h1 E-mail templates for Shopify/Mailchimp
 
-block content
-  .push
-    h4 Base templates
+    h2 OSBH
     ul
-      li: a(href='digest.html') Digest
-      li: a(href='cart.html') Abandoned cart
-      li: a(href='source.html') Source file
-      li: a(href='kit.html') Purchased kit
+      li: a(href='export/osbh/newsletter.html') MC. Newsletter
+      li: a(href='export/osbh/purchased_kit.html') MC. Purchased kit
+      li: a(href='export/osbh/downloaded_source.html') MC. Downloaded source
+      li: a(href='export/osbh/abandoned_cart.html') S. Abandoned checkout
+      li: a(href='export/osbh/order_confirmation.html') S. Order confirmation
 
-    h4 Final templates
+    h2 AKERKits
     ul
-      li: a(href='export/newsletter.html') Newsletter
-      li: a(href='export/purchased_kit.html') Purchased kit
-      li: a(href='export/downloaded_source.html') Downloaded source
-      li: a(href='export/abandoned_cart.html') Abandoned checkout
-      li: a(href='export/order_confirmation.html') Order confirmation
+      li: a(href='export/akerkits/newsletter.html') MC. Newsletter
+      li: a(href='export/akerkits/purchased_kit.html') MC. Purchased kit
+      li: a(href='export/akerkits/downloaded_source.html') MC. Downloaded source
+      li: a(href='export/akerkits/abandoned_cart.html') S. Abandoned checkout
+      li: a(href='export/akerkits/order_confirmation.html') S. Order confirmation

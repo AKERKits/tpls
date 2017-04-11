@@ -1,8 +1,4 @@
-extend ../_layouts/default
-
-block title
-  meta(property='og:title' content='*|MC:SUBJECT|*')
-  title *|MC:SUBJECT|*
+extend ../../_layouts/akerkits
 
 block prelude
   |<!--
@@ -13,6 +9,10 @@ block prelude
   |If you're ready to complete your order, your cart is waiting for your return.
   |{% endcapture %}
   |-->
+
+block title
+  meta(property='og:title' content='{{email_title}}')
+  title {{email_title}}
 
 block content
   .push.centered
@@ -31,9 +31,6 @@ block content
 
     p.text
       |#[a(href='{{order_status_url}}' target='_blank') Complete your order] of the following products and let us bring urban farming to you!
-
-  //- .push
-  //-   +cartItems
 
   .push.pull
     a.btn(href='{{order_status_url}}' target='_blank') Complete your order!

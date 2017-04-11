@@ -1,0 +1,18 @@
+@md-width: 520px;
+@theme-text: #494b4d;
+
+@theme-base: #498744;
+@theme-base-dark: #6da936;
+@theme-base-light: #aeca47;
+@theme-base-background: #7eb445;
+
+@theme-grey: #959991;
+@theme-grey-light: #c7ccc2;
+@theme-almost-black: #30332e;
+
+@theme-spot-color: #fafcfd;
+@theme-spot-border: #d5d7d9;
+@theme-spot-green: #3ab54a;
+@theme-spot-blue: #25aae2;
+
+@import '_base';
