@@ -17,7 +17,11 @@ html
 
       .templateColumns
         .templateRowContainer
-          include ../_partials/logotype
+          table(border=0 cellpadding=0 cellspacing=0 width='100%')
+            tr: td
+              .push.centered
+                a(href='*|LIST:URL|*' target='_blank')
+                  img(src=ASSET_LOGOTYPE_OSBH_URL width=180 height=50)
 
           block content
 

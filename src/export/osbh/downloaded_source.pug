@@ -1,0 +1,34 @@
+extend ../../_layouts/osbh
+
+block title
+  meta(property='og:title' content='*|MC:SUBJECT|*')
+  title *|MC:SUBJECT|*
+
+block content
+  .push.centered
+    img.fit(src=ASSET_CNC_URL width=112 height=142 alt='Source files' mc:edit='product_image')
+
+  .push.centered
+    h3(mc:edit='product_label') Time to make some kits!
+
+  .push(mc:edit='product_intro')
+    p.text Now that you’ve downloaded the source files files, you can go ahead and start building!
+    p.text.
+      Our kits are always in constant improvement,
+      so don’t forget to visit our #[a(href='//community.akerkits.com/' target='_blank') Community Forum]
+      where you can provide your feedback and get support.
+
+  .push.blue.spot(mc:hideable)
+    .templateColumns
+      table(border=0 cellpadding=0 cellspacing=0 width='100%')
+        tr.fix
+          td.break.templateColumnContainer(align='center' valign='top' width='70%')
+            table(border=0 cellpadding=0 cellspacing=0 width='100%')
+              tr: td.columnContent
+                h4(mc:edit='community-forum') AKER Kits Design
+                small(mc:edit='community-posts') 0 topics
+
+          td.templateColumnContainer(align='center' valign='top' width='30%')
+            table(border=0 cellpadding=0 cellspacing=0 width='100%')
+              tr: td.columnContent.pull
+                a.btn(href='//community.akerkits.com/c/design' target='_blank' mc:link='community-link') Visit

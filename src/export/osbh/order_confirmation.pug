@@ -1,0 +1,107 @@
+//-
+  ---
+  line_items:
+  - { "image": "x", "original_line_price": 123, "line_price": 123, "quantity": 1, "product": { "title": "C", "tags": ["source"] } }
+  ---
+
+extend ../../_layouts/osbh
+
+block prelude
+  |<!--
+  |{% assign has_sources = false %}
+  |{% assign has_kits = false %}
+  |{% for x in line_items %}
+  |  {% assign productTags = x.product.tags | join: ' ' %}
+  |  {% if productTags contains 'source' %}
+  |    {% assign has_sources = true %}
+  |  {% else %}
+  |    {% assign has_kits = true %}
+  |  {% endif %}
+  |{% endfor %}
+  |{% if has_kits %}
+  |{% capture email_title %} Thank you for your purchase! {% endcapture %}
+  |{% else %}
+  |{% capture email_title %} Time to make some kits! {% endcapture %}
+  |{% endif %}
+  |-->
+
+block title
+  meta(property='og:title' content='{{email_title}}')
+  title {{email_title}}
+
+block content
+  .push.centered
+    |{% if has_kits %}
+    img(src=ASSET_CART_URL width=160 height=140 alt='Purchased Kits')
+    |{% else %}
+    img(src=ASSET_CNC_URL width=112 height=142 alt='Source files')
+    |{% endif %}
+
+  .push.centered
+    h3 {{email_title}}
+
+  |{% if requires_shipping %}
+  .push Hi {{ customer.first_name }}, we're getting your order ready to be shipped. We will notify you when it has been sent.
+  |{% endif %}
+
+  |{% if custom_message != blank %}
+  .push {{ custom_message }}
+  |{% endif %}
+
+  |{% if has_kits %}
+  .push
+    p.text You will recieve your kit(s) soon.
+    +kitItems
+  |{% endif %}
+
+  |{% if has_sources %}
+  .push
+    p.text Your source files are ready!
+    +sourceItems
+    p.text Once you’ve downloaded the source files files, you can go ahead and start building!
+
+  .push.pull
+    a.btn(href='{{order_status_url}}' target='_blank') Download your files
+  |{% endif %}
+
+  .push
+    |{% if has_sources %}
+    p.text.
+      Our kits are always in constant improvement,
+      so don’t forget to visit our #[a(href='//community.akerkits.com/' target='_blank') Community Forum]
+      where you can provide your feedback and get support.
+    |{% else %}
+    p.text.
+      Don’t forget to visit our #[a(href='//community.akerkits.com/' target='_blank') Community Forum]
+      where you can ask questions and get support.
+    |{% endif %}
+
+  |{% if has_sources %}
+  .push.blue.spot
+    .templateColumns
+      table(border=0 cellpadding=0 cellspacing=0 width='100%')
+        tr.fix
+          td.break.templateColumnContainer(align='center' valign='top' width='70%')
+            table(border=0 cellpadding=0 cellspacing=0 width='100%')
+              tr: td.columnContent
+                h4 AKER Kits Design
+
+          td.templateColumnContainer(align='center' valign='top' width='30%')
+            table(border=0 cellpadding=0 cellspacing=0 width='100%')
+              tr: td.columnContent.pull
+                a.btn(href='//community.akerkits.com/c/design' target='_blank') Visit
+  |{% else %}
+  .push.green.spot
+    .templateColumns
+      table(border=0 cellpadding=0 cellspacing=0 width='100%')
+        tr.fix
+          td.break.templateColumnContainer(align='center' valign='top' width='70%')
+            table(border=0 cellpadding=0 cellspacing=0 width='100%')
+              tr: td.columnContent
+                h4 AKER Community
+
+          td.templateColumnContainer(align='center' valign='top' width='30%')
+            table(border=0 cellpadding=0 cellspacing=0 width='100%')
+              tr: td.columnContent.pull
+                a.btn(href='//community.akerkits.com/c/aker-community' target='_blank') Visit
+  |{% endif %}
