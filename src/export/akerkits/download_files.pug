@@ -1,5 +1,6 @@
 //-
   ---
+  theme: !include ../../_akerkits.yml
   shop:
     name: AKERKits
   customer:
@@ -23,7 +24,7 @@ block title
 
 block content
   .push.centered
-    img(src=ASSET_CNC_URL width=112 height=142 alt='Source files')
+    img(src=theme.cnc width=112 height=142 alt='Source files')
 
   .push
     h3 {{email_title}}

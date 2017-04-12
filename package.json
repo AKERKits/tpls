@@ -9,17 +9,6 @@
     "dist": "tarima -fqe prod"
   },
   "tarima": {
-    "env": {
-      "ASSET_LOGOTYPE_AKER_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/logotype-color.png?3015493557916693308",
-      "ASSET_LOGOTYPE_OSBH_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/osbh-color.png?3015493557916693308",
-      "ASSET_INSTAGRAM_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/icon-instagram.png?3015493557916693308",
-      "ASSET_TWITTER_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/icon-twitter.png?3015493557916693308",
-      "ASSET_FACEBOOK_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/icon-facebook.png?3015493557916693308",
-      "ASSET_EMAIL_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/icon-email.png?3015493557916693308",
-      "ASSET_CNC_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/icon-cnc.png?3015493557916693308",
-      "ASSET_KITS_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/aker-kits.png?3015493557916693308",
-      "ASSET_CART_URL": "https://cdn.shopify.com/s/files/1/1480/1490/files/icon-cart.png?3015493557916693308"
-    },
     "filter": [
       "!_*",
       "!**/_*",

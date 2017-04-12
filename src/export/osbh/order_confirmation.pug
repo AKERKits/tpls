@@ -1,5 +1,6 @@
 //-
   ---
+  theme: !include ../../_osbh.yml
   line_items:
   - { "image": "x", "original_line_price": 123, "line_price": 123, "quantity": 1, "product": { "title": "C", "tags": ["source"] } }
   ---
@@ -32,9 +33,9 @@ block title
 block content
   .push.centered
     |{% if has_kits %}
-    img(src=ASSET_CART_URL width=160 height=140 alt='Purchased Kits')
+    img(src=theme.kits width=160 height=140 alt='Purchased Kits')
     |{% else %}
-    img(src=ASSET_CNC_URL width=112 height=142 alt='Source files')
+    img(src=theme.cnc width=112 height=142 alt='Source files')
     |{% endif %}
 
   .push.centered

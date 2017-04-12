@@ -1,3 +1,8 @@
+//-
+  ---
+  theme: !include ../../_akerkits.yml
+  ---
+
 extend ../../_layouts/akerkits
 
 block prelude
@@ -16,7 +21,7 @@ block title
 
 block content
   .push.centered
-    img(src=ASSET_CART_URL width=160 height=140 alt='Abandoned checkout')
+    img(src=theme.cart width=160 height=140 alt='Abandoned checkout')
 
   .push.centered
     h3 {{email_title}}

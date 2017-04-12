@@ -1,3 +1,8 @@
+//-
+  ---
+  theme: !include ../../_akerkits.yml
+  ---
+
 extend ../../_layouts/akerkits
 
 block title
@@ -6,7 +11,7 @@ block title
 
 block content
   .push.centered
-    img.fit(src=ASSET_CNC_URL width=112 height=142 alt='Source files' mc:edit='product_image')
+    img.fit(src=theme.cnc width=112 height=142 alt='Source files' mc:edit='product_image')
 
   .push.centered
     h3(mc:edit='product_label') Time to make some kits!
